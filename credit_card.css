@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+/*____________________front face_______________________*/
+section{
+    background: #111320;
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section::before{
+    content: "";
+    display: block;
+    height: 350px;
+    width: 350px;
+    background:linear-gradient(90deg,#89208f,#eeedf3);
+    position: absolute;
+    top:calc(50% - 150px);
+    left:calc(50% - 300px);
+    
+    transform: translate(-50%,-50%);
+    border-radius:50%;
+}
+section::after{
+    content: "";
+    display: block;
+    height: 350px;
+    width: 350px;
+    background:linear-gradient(270deg,#89208f,#eeedf3);
+    background-color: red;
+    position: absolute;
+    top:calc(50% + 150px);
+    left:calc(50% + 300px);
+    transform: translate(-50%,-50%);
+    border-radius:50%;
+}
+.outer-card-container{
+    perspective: 1000px;
+    z-index: 30;
+}
+.card-container{
+    width: 650px;
+    height:400px;
+    border-radius: 48px;
+    position: relative;
+    z-index: 30;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out; 
+}
+.outer-card-container:hover .card-container{
+    transform: rotateY(180deg);
+}
+.card{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(25px);
+    border-radius: 48px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow:  0px 30px 50px rgba(0, 0, 0, 0.3);
+    color:white;
+    padding:32px;
+    background: #eeedf341;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.fontface header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 0;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+.logo-container h2{
+    margin-left: 8px;
+    font-size: 30px;
+    font-weight: 400;
+}
+img[alt='chip']{
+    width:90px;
+}
+.logo-container img{
+    width: 85px
+}
+.card-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 80px;
+}
+.name-number h5{
+    font-size: 20px;
+    font-weight: 400;
+}
+.name-number .card-number{
+    margin-top: 8px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-weight:400;
+}
+.name-number .name{
+    font-size: 30px;
+    margin-top:30px;
+    font-weight: 400;
+}
+.exp h5{
+    font-size: 20px;
+    font-weight: 400;
+}
+.exp h3{
+    font-size: 30px;    
+    font-weight: 400;
+}
+/*_________________________back face__________________________*/
+.backface{
+    transform: rotateY(180deg);
+}
+.backface header{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width:100%;
+}
+.magnetic-stip{
+    background-color:black;
+    height: 80px;
+    top: 70px;
+    position: absolute;
+    width: calc(100% + 2px);
+}
+.card-description{
+    margin-top:135px;
+
+}
+.card-pin{
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+.card-pin h5{
+    background: #fefefe;
+    padding:8px 16px 8px 4px;
+    font-weight: 400;
+    border-radius: 0 8px 8px 0;
+    color: black;
+    font-size: 20px;
+}
+.card-pin::before{
+    content: "";
+    width:80%;
+    display: block;
+    height:60px;
+    background:repeating-linear-gradient(#fbfbfb,#fbfbfb 4px,#f0f0f0 4px,#f0f0f0 12px);
+    border-radius: 8px;
+}
+.card-des{
+    margin-top:32px;
+    font-size: 15px;
+}
